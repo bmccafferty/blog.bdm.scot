@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The bdm.scot Blog</title>
+    <link>https://blog.bdm.scot/</link>
+    <description>Recent content on The bdm.scot Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 18 Jul 2021 21:00:29 +0100</lastBuildDate><atom:link href="https://blog.bdm.scot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>https://blog.bdm.scot/about/</link>
+      <pubDate>Sun, 18 Jul 2021 22:20:02 +0100</pubDate>
+      
+      <guid>https://blog.bdm.scot/about/</guid>
+      <description>Hello. I am Brian McCafferty, a Mid 30s Unix Engineer based in Scotland.
+I have build up quite a knowledge base over the years from basic system admin to more specalised concepts around Automation with Ansible and System Management with Red Hat Satellite. Just looking to share some of that knowledge with the wider world and hopefully helps someone else out.
+Always happy for people to reach out to me via Linked In just hit the icon in the top right.</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://blog.bdm.scot/posts/hello-world/</link>
+      <pubDate>Sun, 18 Jul 2021 21:00:29 +0100</pubDate>
+      
+      <guid>https://blog.bdm.scot/posts/hello-world/</guid>
+      <description>My first ever post.
+I am a 30 something Senior Unix Engineer working for a large telecommunications company looking after their Unix infrastructure.
+I have build up quite a knowledge base over the years from basic system admin to more specalised concepts around Automation with Ansible and System Management with Red Hat Satellite. Just looking to share some of that knowledge with the wider world and hopefully helps someone else out.</description>
+    </item>
+    
+  </channel>
+</rss>
