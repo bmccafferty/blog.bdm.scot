@@ -1,32 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The bdm.scot Blog</title>
+    <title>BDM Blog</title>
+    
+    
+    
     <link>https://blog.bdm.scot/</link>
-    <description>Recent content on The bdm.scot Blog</description>
+    <description>Recent content on BDM Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 18 Jul 2021 21:00:29 +0100</lastBuildDate><atom:link href="https://blog.bdm.scot/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2021 Brian McCafferty</copyright>
+    <lastBuildDate>Wed, 08 Dec 2021 11:03:51 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.bdm.scot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Christmas LED Ping Pong Wall</title>
+      <link>https://blog.bdm.scot/posts/xmas_wall/</link>
+      <pubDate>Wed, 08 Dec 2021 11:03:51 +0000</pubDate>
+      
+      <guid>https://blog.bdm.scot/posts/xmas_wall/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Last Christmas in lockdown in 2020 I build a LED Ping Pong wall. Thought it was worth sharing here too.
+You can find the source code and build instructions over on my GitHub Page
+Overview I love Christmas lights and Christmas decorations, I have been wanting to do an Programmable LED Project for a long time so this year I created an LED Wall. Its mostly my own design with some inspiration from youtube videos e.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Satellite 6.9 to 6.10 Space Requirement&#39;s</title>
+      <link>https://blog.bdm.scot/posts/sat69_610_space/</link>
+      <pubDate>Mon, 06 Dec 2021 16:19:14 +0000</pubDate>
+      
+      <guid>https://blog.bdm.scot/posts/sat69_610_space/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          With the release of Satellite 6.10 there are some considerations for space for the migration. This is due to the removal of Mongo DB with the data being migrated into the postgres database and the migration of the pulp system from Pulp 2 to Pulp 3.
+If you are currently running Satellite 6.9 and wish to check the space requirements they are:
+ Ensure you have double the currently used space in /var/lib/pulp/published/ available Ensure you have free space in /var/lib/pulp/media equivalent to the currently used space in /var/lib/pulp/content Ensure the mount for postgresql12 has the free space available equivalent to the currently used space in /var/lib/mongodb/  To help you check and understand these requirments I have created a simple bash script to check these requirements.
+          
+        
+        </description>
+    </item>
+    
     <item>
       <title>About Me</title>
       <link>https://blog.bdm.scot/about/</link>
       <pubDate>Sun, 18 Jul 2021 22:20:02 +0100</pubDate>
       
       <guid>https://blog.bdm.scot/about/</guid>
-      <description>Hello. I am Brian McCafferty, a Mid 30s Unix Engineer based in Scotland.
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Hello. I am Brian McCafferty, a Technical Account Manager at Red Hat.
 I have build up quite a knowledge base over the years from basic system admin to more specalised concepts around Automation with Ansible and System Management with Red Hat Satellite. Just looking to share some of that knowledge with the wider world and hopefully helps someone else out.
-Always happy for people to reach out to me via Linked In just hit the icon in the top right.</description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://blog.bdm.scot/posts/hello-world/</link>
-      <pubDate>Sun, 18 Jul 2021 21:00:29 +0100</pubDate>
-      
-      <guid>https://blog.bdm.scot/posts/hello-world/</guid>
-      <description>My first ever post.
-I am a 30 something Senior Unix Engineer working for a large telecommunications company looking after their Unix infrastructure.
-I have build up quite a knowledge base over the years from basic system admin to more specalised concepts around Automation with Ansible and System Management with Red Hat Satellite. Just looking to share some of that knowledge with the wider world and hopefully helps someone else out.</description>
+Always happy for people to reach out to me via LinkedIn Home
+          
+        
+        </description>
     </item>
     
   </channel>

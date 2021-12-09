@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Satellite 6.9 to 6.10 Space Requirement&#39;s ::
+        BDM Blog — The blog of a Technical Account Manager based in Scotland
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="With the release of Satellite 6.10 there are some considerations for space for the migration. This is due to the removal of Mongo DB with the data being migrated into the postgres database and the migration of the pulp system from Pulp 2 to Pulp 3.
+If you are currently running Satellite 6.9 and wish to check the space requirements they are:
+ Ensure you have double the currently used space in /var/lib/pulp/published/ available Ensure you have free space in /var/lib/pulp/media equivalent to the currently used space in /var/lib/pulp/content Ensure the mount for postgresql12 has the free space available equivalent to the currently used space in /var/lib/mongodb/  To help you check and understand these requirments I have created a simple bash script to check these requirements."
+/>
+<meta
+  name="keywords"
+  content="ansible, satellite, app, rhel"
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.bdm.scot/posts/sat69_610_space/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.bdm.scot/assets/style.css" />
+
+<link rel="stylesheet" href="https://blog.bdm.scot/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://blog.bdm.scot/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://blog.bdm.scot/img/favicon.png" />
+
+
+<link href="https://blog.bdm.scot/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Satellite 6.9 to 6.10 Space Requirement&#39;s"/>
+<meta name="twitter:description" content="With the release of Satellite 6.10 there are some considerations for space for the migration. This is due to the removal of Mongo DB with the data being migrated into the postgres database and the migration of the pulp system from Pulp 2 to Pulp 3.
+If you are currently running Satellite 6.9 and wish to check the space requirements they are:
+ Ensure you have double the currently used space in /var/lib/pulp/published/ available Ensure you have free space in /var/lib/pulp/media equivalent to the currently used space in /var/lib/pulp/content Ensure the mount for postgresql12 has the free space available equivalent to the currently used space in /var/lib/mongodb/  To help you check and understand these requirments I have created a simple bash script to check these requirements."/>
+
+
+
+<meta property="og:title" content="Satellite 6.9 to 6.10 Space Requirement&#39;s" />
+<meta property="og:description" content="With the release of Satellite 6.10 there are some considerations for space for the migration. This is due to the removal of Mongo DB with the data being migrated into the postgres database and the migration of the pulp system from Pulp 2 to Pulp 3.
+If you are currently running Satellite 6.9 and wish to check the space requirements they are:
+ Ensure you have double the currently used space in /var/lib/pulp/published/ available Ensure you have free space in /var/lib/pulp/media equivalent to the currently used space in /var/lib/pulp/content Ensure the mount for postgresql12 has the free space available equivalent to the currently used space in /var/lib/mongodb/  To help you check and understand these requirments I have created a simple bash script to check these requirements." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.bdm.scot/posts/sat69_610_space/" />
+<meta property="article:published_time" content="2021-12-06T16:19:14+00:00" />
+<meta property="article:modified_time" content="2021-12-06T16:19:14+00:00" /><meta property="og:site_name" content="BDM Blog" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >BDM Blog</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about/">About Me</a></li>
+        
+      
+        
+          <li><a href="/posts/">Posts</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about/">About Me</a></li>
+      
+    
+      
+        <li><a href="/posts/">Posts</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Satellite 6.9 to 6.10 Space Requirement&rsquo;s</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2021-12-06
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>With the release of <a href="https://access.redhat.com/documentation/en-us/red_hat_satellite/6.10">Satellite 6.10</a> there are some considerations for space for the migration.  This is due to the removal of Mongo DB with the data being migrated into the postgres database and the migration of the pulp system from Pulp 2 to Pulp 3.</p>
+<p>If you are currently running Satellite 6.9 and wish to check the space requirements they are:</p>
+<ul>
+<li>Ensure you have double the currently used space in /var/lib/pulp/published/ available</li>
+<li>Ensure you have free space in /var/lib/pulp/media equivalent to the currently used space in /var/lib/pulp/content</li>
+<li>Ensure the mount for postgresql12 has the free space available equivalent to the currently used space in /var/lib/mongodb/</li>
+</ul>
+<p>To help you check and understand these requirments I have created a simple bash script to check these requirements.</p>
+<p>The script can be run on a Satellite 6.9 Server to let you know the required space requirements and if your server currently meets these requirements.</p>
+<p>To run the script:</p>
+<ul>
+<li>Log On to your Satellite Server</li>
+<li><code>sudo -i # to gain root</code></li>
+<li><code>curl -o 610_upgrade_space_check.sh https://people.redhat.com/~bmccaffe/scripts/610_upgrade_space_check.sh</code></li>
+<li><code>chmod +x 610_upgrade_space_check.sh</code></li>
+<li><code>./610_upgrade_space_check.sh</code></li>
+<li>Review outputs</li>
+</ul>
+<p>A sample of the output from a test machine is below:</p>
+<pre><code>root@sat6 ~]# ./610_upgrade_space_check.sh
+Checking Migration State for ETA of migration
+Running Retrieve Pulp 2 to Pulp 3 migration statistics
+================================================================================
+Retrieve Pulp 2 to Pulp 3 migration statistics:
+============Migration Summary================
+Migrated/Total RPMs: 0/151398
+Migrated/Total errata: 0/27391
+Migrated/Total repositories: 0/34
+Estimated migration time based on yum content: 1 hours, 34 minutes
+
+Note: ensure there is sufficient storage space for /var/lib/pulp/published to double in size before starting the migration process.
+Check the size of /var/lib/pulp/published with 'du -sh /var/lib/pulp/published/'
+
+Note: ensure there is sufficient storage space for postgresql.
+You will need additional space for your postgresql database.  The partition holding '/var/opt/rh/rh-postgresql12/lib/pgsql/data/'
+   will need additional free space equivalent to the size of your Mongo db database (/var/lib/mongodb/).
+                                                                      [OK]
+--------------------------------------------------------------------------------
+
+
+##################################################
+
+Checking Size of /var/lib/pulp/published/
+9.8G
+
+Upgrade Requires Double This Space to be avail for upgrade
+19.6 G
+
+Checking Avail Space In Mount Point /var/lib/pulp/published/
+460G
+
+[OK] The Pulp published mount has the required free space.
+
+##################################################
+
+Checking Size of /var/lib/pulp/content
+11G
+
+Upgrade Requires Double This Space to be avail for upgrade
+22 G
+
+Checking Avail Space In Mount Point /var/lib/pulp/media
+460G
+
+[OK] The Pulp media mount has the required free space.
+
+This Install has the pulp media &amp; published directorys on the same mount
+Checking combined requirements for space are ok
+
+Combined requirement is 41.6 G
+
+[OK] The combined Pulp media &amp; published mount has the required free space.
+
+##################################################
+
+Checking Size of /var/lib/mongodb/
+8.5G
+
+Checking Avail Space In Mount Point /var/opt/rh/rh-postgresql12/lib/pgsql/data/
+460G
+
+[OK] The postgresql12 mount has the required free space.
+
+##################################################
+
+[OK] All space checks passed.
+
+##################################################
+
+Done!
+
+</code></pre><p>This script is provided for your convenience only and comes with no support from Red Hat in anyway.</p>
+<p>You can review the script before running by using cat on the file or opening in your favorite text editor.</p>
+
+    </div>
+    
+
+    
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">2021 Brian McCafferty</div>
+      
+  </div>
+</footer>
+
+<script src="https://blog.bdm.scot/assets/main.js"></script>
+<script src="https://blog.bdm.scot/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

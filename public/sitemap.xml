@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://blog.bdm.scot/</loc>
+    <lastmod>2021-12-08T11:03:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.bdm.scot/posts/xmas_wall/</loc>
+    <lastmod>2021-12-08T11:03:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.bdm.scot/posts/</loc>
+    <lastmod>2021-12-08T11:03:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.bdm.scot/posts/sat69_610_space/</loc>
+    <lastmod>2021-12-06T16:19:14+00:00</lastmod>
+  </url>
+  
   <url>
     <loc>https://blog.bdm.scot/about/</loc>
     <lastmod>2021-07-18T22:20:02+01:00</lastmod>
-  </url><url>
-    <loc>https://blog.bdm.scot/posts/hello-world/</loc>
-    <lastmod>2021-07-18T21:00:29+01:00</lastmod>
-  </url><url>
-    <loc>https://blog.bdm.scot/posts/</loc>
-    <lastmod>2021-07-18T21:00:29+01:00</lastmod>
-  </url><url>
-    <loc>https://blog.bdm.scot/</loc>
-    <lastmod>2021-07-18T21:00:29+01:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://blog.bdm.scot/categories/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://blog.bdm.scot/tags/</loc>
   </url>
+  
 </urlset>

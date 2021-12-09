@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Christmas LED Ping Pong Wall ::
+        BDM Blog — The blog of a Technical Account Manager based in Scotland
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Last Christmas in lockdown in 2020 I build a LED Ping Pong wall. Thought it was worth sharing here too.
+You can find the source code and build instructions over on my GitHub Page
+Overview I love Christmas lights and Christmas decorations, I have been wanting to do an Programmable LED Project for a long time so this year I created an LED Wall. Its mostly my own design with some inspiration from youtube videos e."
+/>
+<meta
+  name="keywords"
+  content="ansible, satellite, app, rhel"
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.bdm.scot/posts/xmas_wall/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.bdm.scot/assets/style.css" />
+
+<link rel="stylesheet" href="https://blog.bdm.scot/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://blog.bdm.scot/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://blog.bdm.scot/img/favicon.png" />
+
+
+<link href="https://blog.bdm.scot/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://blog.bdm.scot/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Christmas LED Ping Pong Wall"/>
+<meta name="twitter:description" content="Last Christmas in lockdown in 2020 I build a LED Ping Pong wall. Thought it was worth sharing here too.
+You can find the source code and build instructions over on my GitHub Page
+Overview I love Christmas lights and Christmas decorations, I have been wanting to do an Programmable LED Project for a long time so this year I created an LED Wall. Its mostly my own design with some inspiration from youtube videos e."/>
+
+
+
+<meta property="og:title" content="Christmas LED Ping Pong Wall" />
+<meta property="og:description" content="Last Christmas in lockdown in 2020 I build a LED Ping Pong wall. Thought it was worth sharing here too.
+You can find the source code and build instructions over on my GitHub Page
+Overview I love Christmas lights and Christmas decorations, I have been wanting to do an Programmable LED Project for a long time so this year I created an LED Wall. Its mostly my own design with some inspiration from youtube videos e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.bdm.scot/posts/xmas_wall/" />
+<meta property="article:published_time" content="2021-12-08T11:03:51+00:00" />
+<meta property="article:modified_time" content="2021-12-08T11:03:51+00:00" /><meta property="og:site_name" content="BDM Blog" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >BDM Blog</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about/">About Me</a></li>
+        
+      
+        
+          <li><a href="/posts/">Posts</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about/">About Me</a></li>
+      
+    
+      
+        <li><a href="/posts/">Posts</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Christmas LED Ping Pong Wall</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2021-12-08
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>Last Christmas in lockdown in 2020 I build a LED Ping Pong wall.  Thought it was worth sharing here too.</p>
+<p>You can find the source code and build instructions over on my <a href="https://github.com/bmccafferty/ping-pong-led-wall">GitHub Page</a></p>
+<h2 id="overview">Overview</h2>
+<p>I love Christmas lights and Christmas decorations, I have been wanting to do an Programmable LED Project for a long time so this year I created an LED Wall.  Its mostly my own design with some inspiration from youtube videos e.g. the idea to use ping pong balls as diffusers came from <a href="https://www.youtube.com/user/bitlunislab">Bitlunis Lab</a></p>
+<h2 id="see-it-in-action--video">See it in action!  Video</h2>
+<p>You can see a video of it in action with our christmas lights - <a href="https://youtu.be/zc0501GzpMw">XMas Lights 2020</a></p>
+<h2 id="progress-photos">Progress Photos</h2>
+<p>Photo Progress of the Project from Start to End can be found Here - <a href="https://projects.bdm.scot/Xmas%20LED%20Wall%202020/">LED Ping Pong Wall 2020</a></p>
+<h2 id="my-shoppingsupplys-list">My Shopping/Supplys List</h2>
+<ul>
+<li><a href="https://shop.pimoroni.com/products/raspberry-pi-zero-wh-with-pre-soldered-header">Raspberry Pi Zero</a></li>
+<li><a href="https://shop.pimoroni.com/products/pibow-zero-w">Pibow Case</a></li>
+<li>5v 2A USB Power Supply (I used an old Samsung fast charger)</li>
+<li>Old Poster Frame</li>
+<li>255 Ping Pong Balls (Got Large Bags Cheap From ebay)</li>
+<li>Hot Glue Gun and LOTS of Hot Glue Sticks</li>
+<li>Soldering Iron</li>
+<li>Solder</li>
+<li><a href="https://www.amazon.co.uk/gp/product/B07YFXG4KX/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&amp;psc=1">Hook Up Wire</a></li>
+<li><a href="https://www.aliexpress.com/item/32682015405.html?spm=a2g0s.9042311.0.0.36674c4dSAmHwG">2 x 5m 30 Pixels Per Meter WS2812(B) LEDs</a></li>
+<li>Multimeter</li>
+<li>Wirecutters</li>
+<li>Wire strippers</li>
+</ul>
+<h2 id="design">Design</h2>
+<p>My design was mainly driven by the size of the poster frame I had I Got 30 Pixel per Meter tape from Ali Express which cut nicly into 0.5m sections so that gave me 15 LEDs accross, Ping pong balls are 40mm so I mesured and placed me lines 40mm apart with the LED Strip in the middle of each 40mm section which gave me 17 lines down in total so my baord became 15 x 17.</p>
+<p>To make hook up to power and the raspberry pi easy I put the connections at the bottom of the board for the data &amp; power in.  As I am not running too many LEDs I was able to use the 5v out from the Pi Zero to drive the LEDs, I run them at 50% brightness which is plenty bright to see in the day &amp; night in the window (See the photos for day &amp; night shots)</p>
+<h2 id="wireing">Wireing</h2>
+<p>In my design I started at the bottom of the board and wired up the way in a zig-zag fashion to make the soldering easier and shoter e.g. loops at the end of each row and not having to run wires all the way back to the start of each line as WS2812 Data lines required you to wire the data the correct way, power can be fed from either side of the strip but data must be fed from the side with the arrows pointing away so my wireing design looks like this (Albet 17 lines deep):</p>
+<pre><code>&lt;---------------\
+                |
+/---------------/
+|
+\---------------&lt; # Pi Connected Here
+</code></pre><h2 id="the-build">The Build</h2>
+<p>Once the design and wireing plan was sorted it was time to get started on the build.  I mesured and drew my lines in pencil on the poster backboard, the WS2812s came with sticky tape on the back so I just removed the backing and attached that directly to the backboard, making sure that the arrows go one way then back the other on the line above to ensure easy to hook up the data line.</p>
+<p>Once all attached I cut 3 x similar lengeths of wire and wired up the 5v, Data &amp; Ground lines from the end of each line to the one above like this:</p>
+<p><img src="https://projects.bdm.scot/Xmas%20LED%20Wall%202020/IMG_20201126_115520.jpeg?variant=small2" alt="Soldering"></p>
+<p>As I was doing this after a few lines I wanted to test everything was going ok.  I was checking continuity between the 5v and ground lines between each strip to ensure my joints were correct, I also checked that I had not bridged any conenctions so checked that there was no continuity between the 5v and ground lines e.g. 5v on one line did not bridge to the ground on the next line.  I also ran some tests to ensure everything was lighting up correctly. See below in The Code section for the strand test code I was using to test everything was working.</p>
+<p>Once this was completed I started to cut holes in the ping pong balls stabbing the scissors into bottom of them and cutting a small hole for the LED to shine into, there was no exact science to this, each was differant but the effect really worked.  As I was working with 30 pixels per meter this tape has about 30mm between each LED but ping pong balls are 40mm accross.  I was not about to start soldering each LED individually!  I am not that good at soldering (As my photos show!) and I thought well they are ping pong balls, I can just squash them together!  So thats what I did, Hot glue blob round each LED, Place the ping pong ball onto the LED over the hole and hold for about 5 seconds, then hold onto that one and slide the next one in pushing it against the one before to sort of fold it into its neighbour.  The effect worked really well.  I like how it started to look right away.  It also had the nice bonus of hideing my bad soldering job!</p>
+<p><img src="https://projects.bdm.scot/Xmas%20LED%20Wall%202020/IMG_20201127_101409.jpeg?variant=small2" alt="Ping_Pong_Start"></p>
+<p>I continued doing this for 255 LEDs/Ping ping balls.  There were a few crushed ping pong balls in the process but in the end I got there and the final result looked like this:</p>
+<p><img src="https://projects.bdm.scot/Xmas%20LED%20Wall%202020/IMG_20201127_160500.jpeg?variant=small2" alt="Ping_Pong_Done"></p>
+<h2 id="the-code">The Code</h2>
+<p>For the test code to ensure everything was working I used this <a href="https://learn.adafruit.com/neopixels-on-raspberry-pi/python-usage">Adafruit Guide</a> which lights each LED up red, green, blue then does a rainbow cycle.  I used this when I was building to ensure my connections were all correct and everything was wired/soldered correctly.</p>
+<p>After that I designed a grid in excel to map each pixel to a grid postion, this was to make building images easier as my pixel numbers run in a zig zag patten it would of been hard to keep track of each LED, e.g. LED A1 was 256 and B1 was 226.  The sheet I used is in this repo.</p>
+<p>Once this was all set it was designing some images, done on paper and in excel then codeing them.</p>
+<p>It got a bit addictive and started adding some animation (using loops and turning pixels on to one colour then another colour) Just basic stuff this year (This was my first project after all!)</p>
+<p>The end result I think turned out amazing. All the photos are in this gallary - <a href="https://projects.bdm.scot/Xmas%20LED%20Wall%202020/">LED Ping Pong Wall 2020</a> However some of my favorates ones are below:</p>
+<p><img src="https://projects.bdm.scot/Xmas%20LED%20Wall%202020/IMG_20201127_181931.jpeg?variant=small2" alt="Fav1"></p>
+<p><img src="https://projects.bdm.scot/Xmas%20LED%20Wall%202020/IMG_20201202_215902.jpeg?variant=small2" alt="Fav2"></p>
+<p><img src="https://projects.bdm.scot/Xmas%20LED%20Wall%202020/IMG_20201127_215314.jpeg?variant=small2" alt="Fav3"></p>
+<h2 id="next-steps">Next Steps</h2>
+<p>I am not sure this will ever be finished!  Nearly every night since its been up in the window I have added some new image/animation.  Already thinking about New Year.  I also wont be putting this in the loft with my Christmas Decorations in January so will have to think of other things to draw on it for an all year round project!  My friend suggested a Pixel Mario and I love that idea!</p>
+<p>My code also needs some work, for example I do some scrolling text but I redraw the whole board for each position of the text so it took quite a bit of time to do.  I think I can do something with loops or perhaps the image libary to be able to scroll the letters easier and make it easier to just add text rather than turning on/off each pixel every step.</p>
+<h2 id="finally">Finally</h2>
+<p>I am really really pleased how this turned out and I think it looks amazing.  For a first attempt I have to say I am very please.  Very exicted to try some other LED Projects in the future.</p>
+<p>You can find the source code and build instructions over on my GitHub Page</p>
+
+    </div>
+    
+
+    
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">2021 Brian McCafferty</div>
+      
+  </div>
+</footer>
+
+<script src="https://blog.bdm.scot/assets/main.js"></script>
+<script src="https://blog.bdm.scot/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
