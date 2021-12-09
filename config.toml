@@ -1,15 +1,39 @@
 baseURL = "https://blog.bdm.scot"
 languageCode = "en-gb"
-title = "The bdm.scot Blog"
-theme = "ananke"
+title = "BDM Blog"
+author = "Brian McCafferty"
+#theme = "ananke"
+theme = "hello-friend"
 SectionPagesMenu = "main"
 
+[languages]
+  [languages.en]
+    title = "BDM Blog"
+    subtitle = "The blog of a Technical Account Manager based in Scotland"
+    keywords = "ansible, satellite, app, rhel"
+    copyright = "2021 Brian McCafferty"
+    menuMore = "Show more"
+    writtenBy = "Written by"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    minuteReadingTime = "min read"
+    dateFormatSingle = "2006-01-02"
+    dateFormatList = "2006-01-02"
+    # leave empty to disable, enter display text to enable
+    # lastModDisplay = ""
+
+    [languages.en.params.logo]
+      logoText = "BDM Blog"
+      logoHomeLink = "/"
+
 [params]
-  favicon = "favicon.ico"
-  site_logo = "/img/bdm-scot-logo.png"
-  description = "The blog of a Senior Technical Support Engineer based in Scotland"
+  #favicon = "favicon.ico"
+  #site_logo = "/img/bdm-scot-logo.png"
+  description = "The blog of a Technical Account Manager based in Scotland"
   #facebook = ""
-  #twitter = "https://twitter.com/GoHugoIO"
+  twitter = "https://twitter.com/bdm_scot"
   #instagram = ""
   #youtube = ""
   github = "https://github.com/bmccafferty"
